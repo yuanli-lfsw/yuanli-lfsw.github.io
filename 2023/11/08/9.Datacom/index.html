@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="[&quot;zh-cn&quot;,&quot;en-us&quot;,&quot;default&quot;]" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>08.VLAN基础 | 元立'Blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="/js/gitalk.js"></script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/edge_background.jpg');
+ --light-background: url('/img/edge_background.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script async src="/js/gitalk.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@9.2.2/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/Link-Portals/"><span class="navItemTitle">Link-Portals</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>08.VLAN基础</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-11-08T07:00:10.000Z" id="date"> 2023-11-08</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2023-11-24T08:32:48.000Z" id="updated"> 2023-11-24</time></div></span><br><span id="busuanzi_container_page_pv">页面浏览: <span class="control" id="busuanzi_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h1 id="VLAN"><a href="#VLAN" class="headerlink" title="VLAN"></a>VLAN</h1><p>作用：隔离广播域，实现二层的访问控制<br>	通过 VLAN ID 来区分数据来自于哪一个广播域</p>
+<p>在原始的数据帧中添加（802.1Q）来进行标识<br>802.1Q 有 12 bit 的 VLAN ID（取值范围：0—4095，但是 0 和 4095 保留）</p>
+<h2 id="VLAN-概念"><a href="#VLAN-概念" class="headerlink" title="VLAN 概念"></a>VLAN 概念</h2><h3 id="PVID（端口默认-VLAN-ID）"><a href="#PVID（端口默认-VLAN-ID）" class="headerlink" title="PVID（端口默认 VLAN ID）"></a>PVID（端口默认 VLAN ID）</h3><p>当交换设备收到一个不带标签的数据帧，就会根据 PVID 打上标签并接收<br>		X7 系列的交换设备，默认的 PVID &#x3D; 1</p>
+<h3 id="端口类型"><a href="#端口类型" class="headerlink" title="端口类型"></a>端口类型</h3><h4 id="Access："><a href="#Access：" class="headerlink" title="Access："></a>Access：</h4><p>用于连接终端设备（PC、打印机、服务器等）“因为一般的终端设备都不能识别标签”<br>有且允许一个 VLAN 通，并且从该接口发出的数据帧都不带标签（剥离标签发送）</p>
+<ul>
+<li><p>收规则：收到一个带标签的数据帧，会查看标签与接口的 PVID 是否一致，如果一致则接收，否则丢弃<br>  收到一个不带标签的数据帧，会根据接口的 PVID 打上标签，并且接收</p>
+</li>
+<li><p>发规则：发送的数据帧标签必须与接口的 PVID 一致，否则不能发送<br>  （从该接口发出的数据帧都会剥离标签发送）</p>
+</li>
+</ul>
+<h4 id="Trunk："><a href="#Trunk：" class="headerlink" title="Trunk："></a>Trunk：</h4><p>用于连接交换设备之间（干道链路）可以允许单个或多个 VLAN 通过<br>并且在通过该接口的时候保留 VLAN 标签</p>
+<ul>
+<li><p>收规则：收到一个带标签的数据帧，会查看接口的允许列表（allow-pass）是否有相关标签，如果有则接收，否则丢弃<br>  收到一个不带标签的数据帧，会根据接口的 PVID 打上标签，再查看接口允许列表是否存在相关标签，有则接收，否则丢弃</p>
+</li>
+<li><p>发规则：发送带标签的数据帧，会先查看接口的允许列表（allow-pass）列表中包含该 VLAN 则可以发出，否则拒绝发送<br>  对于可以发出的数据帧，会查看接口的 PVID 与标签是否一致，如果一致则剥离标签发送，否则保留标签发送</p>
+</li>
+</ul>
+<h4 id="Hybrid："><a href="#Hybrid：" class="headerlink" title="Hybrid："></a>Hybrid：</h4><p>既可以连接终端又可以连接交换设备（是华为、华三特有的混合接口）<br>能够允许单个或多个 VLAN 同时通过。并且通过的时候能够选择是否携带标签
+	</p>
+<ul>
+<li><p>收规则：收到一个带标签的数据帧，会查看接口的允许列表（tagged、untagged）如果列表中存在该标签，则可以接收，否则丢弃<br>  收到一个不带标签的数据帧，会根据接口的 PVID 打上标签，再查看允许列表（tagged、untagged）有则接收，否则丢弃</p>
+</li>
+<li><p>发规则：发送一个带标签的数据帧，会查看接口的允许列表是否包含该数据帧（tagged、untagged）如果有则允许发送，否则不发送<br>  对于能够发出的数据帧会查看相关的列表，存在于（tagged 列表）则保留标签发送<br>  存在于（untagged 列表）则剥离标签发送</p>
+</li>
+</ul>
+<h1 id="配置命令："><a href="#配置命令：" class="headerlink" title="配置命令："></a>配置命令：</h1><ul>
+<li>创建 VLAN（划分 VLAN 前必须创建相关 VLAN）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">vlan batch 10 20 30	 100 to 200		// 例如：同时创建 10、20、30 及 100 到 200 的 VLAN<br></code></pre></td></tr></table></figure>
+<ul>
+<li>Access 接口配置</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">interface  G0/0/X				// 进入连接终端设备的物理接口<br>port  link-type  access			<br>port  default  vlan  10			// 配置 Access 接口类型，PVID 修改为 10<br>（根据划分的 VLAN 配置 PVID 即可）<br></code></pre></td></tr></table></figure>
+<ul>
+<li>Trunk 接口配置</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">interface  G0/0/X				// 进入连接终端设备的物理接口<br>port  link-type  trunk			// 把接口链路类型修改为 Trunk	<br>port  trunk  allow-pass vlan  10 20 30		// 例如：同时允许 VLAN 10、20、30 通过<br>port  trunk  pvid  vlan  10			// 例如：把 Trunk 接口的 PVID 修改为 10（一般不需要修改，默认为 1）<br>（如：Trunk 接口连接 PC 或者 AP 等可以配置 PVID 使其剥离标签）	<br></code></pre></td></tr></table></figure>
+<ul>
+<li>Hybrid 接口配置</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">interface  G0/0/X				// 进入连接终端设备的物理接口<br>port  link-type  hybrid			// 把接口链路类型修改为 Hybrid（默认也为该接口）<br>port hybrid tagged  vlan   30			// 允许 VLAN  30 通过，并且通过时携带标签<br><br>port hybrid untagged  vlan  10  20 		// 允许 VLAN 10、20  通过，并且通过时不带标签<br><br>补充：tagged 和 untagged 都存在相同 VLAN 时，最后一个配置生效（无法同时存在）<br>port hybrid  pvid  vlan  1			// 只影响数据包的接收，接收不带标签的数据包才会打上 PVID 相关标签<br></code></pre></td></tr></table></figure><div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/11/09/10.Datacom/">← 下一篇 09.以太网交换基础</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/11/07/8.Datacom/">07.OSPF多区域与特性 上一篇 →</a></div></div></div><div id="comments"><div id="gitalk"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/SAO.png" alt="Logo"></a><h1 id="Dr"><a href="/">LFSW元立</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/LongFengShuanWu"><i class="fab fa-github" alt="Github"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/200274416"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/lfswyuan-li"><i class="fab fa-zhihu" alt="Zhihu"></i></a><a class="social" href="jun@yuanli-lfsw.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#VLAN"><span class="toc-number">1.</span> <span class="toc-text">VLAN</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#VLAN-%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">VLAN 概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PVID%EF%BC%88%E7%AB%AF%E5%8F%A3%E9%BB%98%E8%AE%A4-VLAN-ID%EF%BC%89"><span class="toc-number">1.1.1.</span> <span class="toc-text">PVID（端口默认 VLAN ID）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">端口类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Access%EF%BC%9A"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">Access：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Trunk%EF%BC%9A"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">Trunk：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hybrid%EF%BC%9A"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">Hybrid：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">配置命令：</span></a></li></ol></div></div><footer><nobr><span class="icp-title">ICP</span><a class="icp-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">用github托管不就图个不用icp备案</a></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>

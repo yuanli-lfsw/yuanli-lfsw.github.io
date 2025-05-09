@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="[&quot;zh-cn&quot;,&quot;en-us&quot;,&quot;default&quot;]" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>02.VRP系统--基础配置命令 | 元立'Blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="/js/gitalk.js"></script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/edge_background.jpg');
+ --light-background: url('/img/edge_background.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script async src="/js/gitalk.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@9.2.2/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/Link-Portals/"><span class="navItemTitle">Link-Portals</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>02.VRP系统--基础配置命令</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-11-02T14:14:04.000Z" id="date"> 2023-11-02</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2023-11-24T07:16:24.000Z" id="updated"> 2023-11-24</time></div></span><br><span id="busuanzi_container_page_pv">页面浏览: <span class="control" id="busuanzi_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><p><strong>设备可以使用 WEB 或 CLI 方式登录</strong><br>CLI 方式是管理员常用的调试方式</p>
+<h1 id="VTY-接口"><a href="#VTY-接口" class="headerlink" title="VTY 接口"></a>VTY 接口</h1><p>配置级（2级以上）可以完成系统配置<br>管理级（3级以上）可以对设备进行配置，以及设备升级，故障诊断等<br>等级越高权限越高（0—3、或者 0—15）</p>
+<hr>
+<h1 id="基础配置命令"><a href="#基础配置命令" class="headerlink" title="基础配置命令"></a>基础配置命令</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;Huawei&gt;			//用户视图（可以完成配置命令测试，保存配置文件，重启服务等）<br><br>[Huawei]				// 系统配置视图（可以完成协议、接口等操作配置）<br></code></pre></td></tr></table></figure>
+<h5 id="1-进入系统配置视图"><a href="#1-进入系统配置视图" class="headerlink" title="1. 进入系统配置视图"></a>1. 进入系统配置视图</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">system-view 		// 进入系统配置视图<br><br>sysname AR1		// 把设备名称修改为 AR1<br></code></pre></td></tr></table></figure>
+<h5 id="2-进入接口视图"><a href="#2-进入接口视图" class="headerlink" title="2. 进入接口视图"></a>2. 进入接口视图</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">interface + 接口类型和 ID<br>interface Pos 2/0/0		// 进入 P2/0/0 接口<br><br>ip address  10.1.1.1  24	// 配置接口 IP 地址，10.1.1.1/24<br></code></pre></td></tr></table></figure>
+
+<h5 id="3-查看命令"><a href="#3-查看命令" class="headerlink" title="3. 查看命令"></a>3. 查看命令</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">display  ip interface brief 				// 查看接口的 IP 地址摘要<br><br>display current-configuration 			// 查看设备所有的配置信息<br><br>display current-configuration   interface		// 查看设备所有的接口配置信息<br><br>display current-configuration |  begin  ospf		// 查看字符 &quot;OSPF&quot; 的配置信息<br><br>display  this 					// 查看当前视图的信息<br></code></pre></td></tr></table></figure>
+<h5 id="4-视图之间的切换"><a href="#4-视图之间的切换" class="headerlink" title="4. 视图之间的切换"></a>4. 视图之间的切换</h5><p>不同的视图可以执行不同的命令行信息，对命令进行的分类<br>用户  &gt;   系统  &gt; 接口、协议、策略等<br>不同等级的视图需要逐级进入，例如：用户需要通过系统视图才能进入到接口，无法直接从用户视图切换到接口视图<br>相同等级的视图可以随时切换，例如：从接口视图切换到协议（OSPF）视图</p>
+<h6 id="返回上一级视图"><a href="#返回上一级视图" class="headerlink" title="返回上一级视图"></a>返回上一级视图</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">quit						// 返回上一级视图<br></code></pre></td></tr></table></figure>
+
+<h5 id="5-删除配置"><a href="#5-删除配置" class="headerlink" title="5. 删除配置"></a>5. 删除配置</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">接口配置<br>interface GigabitEthernet0/0/1<br>port link-type access<br>port default vlan 10<br></code></pre></td></tr></table></figure>
+<h6 id="例1：删除配置命令"><a href="#例1：删除配置命令" class="headerlink" title="例1：删除配置命令"></a>例1：删除配置命令</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">undo  port   default  vlan  10				// ^ 代表命令行有误，或者多余的命令<br>			           ^<br>	undo  port default vlan					// 删除接口默认 VLAN<br></code></pre></td></tr></table></figure>
+<h6 id="例2：删除接口类型"><a href="#例2：删除接口类型" class="headerlink" title="例2：删除接口类型"></a>例2：删除接口类型</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">undo  port  						// ^ 代表输入的命令不全<br>		    ^<br>undo  port  link-type					// 删除接口类型<br></code></pre></td></tr></table></figure>
+<h5 id="6-测试命令"><a href="#6-测试命令" class="headerlink" title="6. 测试命令"></a>6. 测试命令</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ping  +  目的 IP 地址					<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/11/03/3.Datacom/">← 下一篇 03.网络参考模型</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/11/01/1.Datacom/">01.网络交换基础 上一篇 →</a></div></div></div><div id="comments"><div id="gitalk"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/SAO.png" alt="Logo"></a><h1 id="Dr"><a href="/">LFSW元立</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/LongFengShuanWu"><i class="fab fa-github" alt="Github"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/200274416"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/lfswyuan-li"><i class="fab fa-zhihu" alt="Zhihu"></i></a><a class="social" href="jun@yuanli-lfsw.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#VTY-%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.</span> <span class="toc-text">VTY 接口</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">基础配置命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E8%BF%9B%E5%85%A5%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E8%A7%86%E5%9B%BE"><span class="toc-number">2.0.0.0.1.</span> <span class="toc-text">1. 进入系统配置视图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E8%BF%9B%E5%85%A5%E6%8E%A5%E5%8F%A3%E8%A7%86%E5%9B%BE"><span class="toc-number">2.0.0.0.2.</span> <span class="toc-text">2. 进入接口视图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4"><span class="toc-number">2.0.0.0.3.</span> <span class="toc-text">3. 查看命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E8%A7%86%E5%9B%BE%E4%B9%8B%E9%97%B4%E7%9A%84%E5%88%87%E6%8D%A2"><span class="toc-number">2.0.0.0.4.</span> <span class="toc-text">4. 视图之间的切换</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E4%B8%8A%E4%B8%80%E7%BA%A7%E8%A7%86%E5%9B%BE"><span class="toc-number">2.0.0.0.4.1.</span> <span class="toc-text">返回上一级视图</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E5%88%A0%E9%99%A4%E9%85%8D%E7%BD%AE"><span class="toc-number">2.0.0.0.5.</span> <span class="toc-text">5. 删除配置</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BE%8B1%EF%BC%9A%E5%88%A0%E9%99%A4%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4"><span class="toc-number">2.0.0.0.5.1.</span> <span class="toc-text">例1：删除配置命令</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BE%8B2%EF%BC%9A%E5%88%A0%E9%99%A4%E6%8E%A5%E5%8F%A3%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.0.0.0.5.2.</span> <span class="toc-text">例2：删除接口类型</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4"><span class="toc-number">2.0.0.0.6.</span> <span class="toc-text">6. 测试命令</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">ICP</span><a class="icp-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">用github托管不就图个不用icp备案</a></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>

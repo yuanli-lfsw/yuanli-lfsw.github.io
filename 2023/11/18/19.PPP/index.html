@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="[&quot;zh-cn&quot;,&quot;en-us&quot;,&quot;default&quot;]" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>18.PPP配置命令 | 元立'Blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="/js/gitalk.js"></script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/edge_background.jpg');
+ --light-background: url('/img/edge_background.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script async src="/js/gitalk.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@9.2.2/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/Link-Portals/"><span class="navItemTitle">Link-Portals</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>18.PPP配置命令</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-11-18T07:00:10.000Z" id="date"> 2023-11-18</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2023-11-24T07:18:48.000Z" id="updated"> 2023-11-24</time></div></span><br><span id="busuanzi_container_page_pv">页面浏览: <span class="control" id="busuanzi_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h1 id="认证方（ISP-侧）"><a href="#认证方（ISP-侧）" class="headerlink" title="认证方（ISP 侧）"></a>认证方（ISP 侧）</h1><ol>
+<li>AAA 创建本地用户</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">aaa<br>local-user hjp password cipher Huawei@123		// 进入 AAA 视图，创建运营商分配的用户账号<br> local-user hjp service-type ppp			// 指定服务类型为：PPP<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>进入运营商的接口开启 PAP 或者 CHAP 认证</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">interface Pos2/0/0<br>ppp authentication-mode pap 			// 如：开启 PAP 认证，对接入用户的身份进行检查<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>可选配置（为接入的用户分配 IP 地址）</li>
+</ol>
+<ul>
+<li>创建地址池</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ip pool A<br> network 100.1.1.0 mask 24				// 网段一般使用运营商接口相同的子网段<br> excluded-ip-address 100.1.1.2 			// 排除运营商侧的接口 IP ，以防分配后冲突<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>接口调用地址池</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>interface Pos2/0/0<br>remote address pool A				// 为接入用户分配 IP 地址（使用地址池 A）<br></code></pre></td></tr></table></figure>
+<ul>
+<li>完成以上配置后，需要重启接口</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">shutdown / undo  shutdown 				// 因为 PPP 协议一旦协商成功，则不会重新进行参数协商<br></code></pre></td></tr></table></figure>
+<hr>
+<h1 id="CHAP-认证"><a href="#CHAP-认证" class="headerlink" title="CHAP 认证"></a>CHAP 认证</h1><ul>
+<li>如果运营商的接口配置了用户名，则用户接口可以不用配置密码</li>
+</ul>
+<ol>
+<li>运营商</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">interface Pos2/0/0<br>ppp authentication-mode chap 					// 开启 CHAP 认证<br>ppp chap user hjp							// 接口配置了用户名信息（可选）<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>用户设备只需要接口开启用户名，并使用全局密码即可</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">aaa<br>local-user hjp password cipher Huawei@123		// 进入 AAA 视图，创建运营商分配的用户账号<br> local-user hjp service-type ppp			// 指定服务类型为：PPP<br><br>interface Pos2/0/0<br>ppp chap user hjp					// 接口配置用户名即可完成认证<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>如果运营商的接口没有用户名</li>
+</ul>
+<ol>
+<li>运营商</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">interface Pos2/0/0<br>ppp authentication-mode chap 				// 开启 CHAP 认证<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>用户必须在接口配置密码，使用接口密码来通过认证</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">interface Pos2/0/0<br>ppp chap user hjp<br>ppp chap password simple Huawei@123			// 如果运营商没有提供用户名，则用户的接口必须配置密码,使用接口密码来通过认证，并且接口配置优先于全局配置<br></code></pre></td></tr></table></figure>
+<hr>
+<hr>
+<h1 id="用户侧配置（被认证方）"><a href="#用户侧配置（被认证方）" class="headerlink" title="用户侧配置（被认证方）"></a>用户侧配置（被认证方）</h1><ol>
+<li>配置运营商提供的账号密码，通过身份认证</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">interface Pos2/0/0<br>ppp pap local-user hjp password simple Huawei@123			// 配置账户密码<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>如果运营商侧配置了地址池，则用户可以获取公网 IP 地址</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">interface Pos2/0/0<br>ip address ppp-negotiate						// 地址使用 PPP 协商方式获取	<br></code></pre></td></tr></table></figure>
+<p>当配置完账户信息和地址协商后，需要重启接口</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">shutdown  / undo   shutdown<br></code></pre></td></tr></table></figure>
+<p>重新协商后，可以通过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">display  ip  interface  brief  				// 查看接口是否获取 IP 地址，如果有则代表认证通过，否则失败<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>内网与外网互访的配置</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">acl 2000<br>rule permit source any						// 创建 ACL 匹配需要进行 NAT 转换的数据包（默认允许所有流量转换）<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>接口调用 NAT （Easy ip）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">interface Pos2/0/0<br>nat outbound  2000						// 使用 P2/0/0 接口的 IP 地址进行 NAT 转换<br></code></pre></td></tr></table></figure>
+<ol start="5">
+<li>配置访问外网服务器的 IP 路由</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ip route-static  0.0.0.0   0   Pos2/0/0					// PPP 协议无需指定下一跳地址，只需要指定出去的接口即可<br></code></pre></td></tr></table></figure><div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/11/19/20.PPPoE/">← 下一篇 19.PPPoE笔记</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/11/17/18.NAT/">17.NAT 上一篇 →</a></div></div></div><div id="comments"><div id="gitalk"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/SAO.png" alt="Logo"></a><h1 id="Dr"><a href="/">LFSW元立</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/LongFengShuanWu"><i class="fab fa-github" alt="Github"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/200274416"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/lfswyuan-li"><i class="fab fa-zhihu" alt="Zhihu"></i></a><a class="social" href="jun@yuanli-lfsw.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E6%96%B9%EF%BC%88ISP-%E4%BE%A7%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">认证方（ISP 侧）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CHAP-%E8%AE%A4%E8%AF%81"><span class="toc-number">2.</span> <span class="toc-text">CHAP 认证</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E4%BE%A7%E9%85%8D%E7%BD%AE%EF%BC%88%E8%A2%AB%E8%AE%A4%E8%AF%81%E6%96%B9%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">用户侧配置（被认证方）</span></a></li></ol></div></div><footer><nobr><span class="icp-title">ICP</span><a class="icp-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">用github托管不就图个不用icp备案</a></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>

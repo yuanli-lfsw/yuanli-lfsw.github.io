@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="[&quot;zh-cn&quot;,&quot;en-us&quot;,&quot;default&quot;]" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>树莓派上位机刷写先前准备 | 元立'Blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="/js/gitalk.js"></script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/edge_background.jpg');
+ --light-background: url('/img/edge_background.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script async src="/js/gitalk.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@9.2.2/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/Link-Portals/"><span class="navItemTitle">Link-Portals</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>树莓派上位机刷写先前准备</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-04-28T09:47:44.000Z" id="date"> 2024-04-28</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2024-04-28T12:27:08.000Z" id="updated"> 2024-04-28</time></div></span><br><span id="busuanzi_container_page_pv">页面浏览: <span class="control" id="busuanzi_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h1 id="测试环境："><a href="#测试环境：" class="headerlink" title="测试环境："></a>测试环境：</h1><p>树莓派zero2w<br>64位raspberrypiOS-lite（debian12）</p>
+<hr>
+<h1 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h1><h2 id="软件源换清华源"><a href="#软件源换清华源" class="headerlink" title="软件源换清华源"></a>软件源换清华源</h2><p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/debian/">debian | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p>
+<h2 id="Raspberrypi-软件仓库换源"><a href="#Raspberrypi-软件仓库换源" class="headerlink" title="Raspberrypi 软件仓库换源"></a>Raspberrypi 软件仓库换源</h2><p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/raspberrypi/">raspberrypi | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p>
+<h2 id="更新仓库"><a href="#更新仓库" class="headerlink" title="更新仓库"></a>更新仓库</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo apt update<br>sudo apt upgrade<br></code></pre></td></tr></table></figure>
+<h1 id="python换源"><a href="#python换源" class="headerlink" title="python换源"></a>python换源</h1><h2 id="pip下载"><a href="#pip下载" class="headerlink" title="pip下载"></a>pip下载</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo apt install pip<br></code></pre></td></tr></table></figure>
+<h2 id="pip永久换清华源"><a href="#pip永久换清华源" class="headerlink" title="pip永久换清华源"></a>pip永久换清华源</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple<br></code></pre></td></tr></table></figure>
+<h2 id="piwheels换阿里源"><a href="#piwheels换阿里源" class="headerlink" title="piwheels换阿里源"></a><a target="_blank" rel="noopener" href="https://www.piwheels.org/">piwheels</a>换阿里源</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo nano /etc/pip.conf<br>修改为：<br>extra-index-url=https://mirrors.aliyun.com/pypi/simple<br><br></code></pre></td></tr></table></figure>
+<h1 id="修改UART"><a href="#修改UART" class="headerlink" title="修改UART"></a>修改UART</h1><h2 id="使用raspi-config启用UART"><a href="#使用raspi-config启用UART" class="headerlink" title="使用raspi-config启用UART"></a>使用raspi-config启用UART</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo raspi-config<br></code></pre></td></tr></table></figure>
+<p>参考文件：<a target="_blank" rel="noopener" href="https://blog.csdn.net/no1xium/article/details/125617965">玩转树莓派二、树莓派配置工具 raspi-config 使用指南-CSDN博客</a></p>
+<h2 id="分配UART0到GPIO"><a href="#分配UART0到GPIO" class="headerlink" title="分配UART0到GPIO"></a>分配UART0到GPIO</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo nano /boot/firmware/config.txt<br>添加到行末：<br>dtoverlay=pi3-miniuart-bt<br>force_tubo=1<br></code></pre></td></tr></table></figure>
+<p>参考文件：<a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1627956-1-1.html">树莓派zero 2w打开UART串口 - 『编程语言讨论求助区』 - 吾爱破解 - LCG - LSG |安卓破解|病毒分析|www.52pojie.cn</a></p>
+<h1 id="克隆仓库"><a href="#克隆仓库" class="headerlink" title="克隆仓库"></a>克隆仓库</h1><h2 id="git下载"><a href="#git下载" class="headerlink" title="git下载"></a>git下载</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo apt install git<br></code></pre></td></tr></table></figure>
+
+<h2 id="克隆gitee的-Kiauh镜像仓库"><a href="#克隆gitee的-Kiauh镜像仓库" class="headerlink" title="克隆gitee的 Kiauh镜像仓库"></a>克隆gitee的 <a target="_blank" rel="noopener" href="https://gitee.com/miroky/kiauh" title="kiauh">Kiauh</a>镜像仓库</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git clone https://gitee.com/miroky/kiauh.git<br></code></pre></td></tr></table></figure>
+<h1 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">./kiauh/kiauh.sh<br></code></pre></td></tr></table></figure>
+
+<h1 id="热点设置："><a href="#热点设置：" class="headerlink" title="热点设置："></a>热点设置：</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo nmcli device wifi hotspot ssid 名字 password 密码<br></code></pre></td></tr></table></figure>
+<p>参考文件：<a target="_blank" rel="noopener" href="https://www.raspberrypi.com/documentation/computers/configuration.html#enable-hotspot">配置 - Raspberry Pi 文档</a></p>
+<h2 id="设置自动启用："><a href="#设置自动启用：" class="headerlink" title="设置自动启用："></a>设置自动启用：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo nmcli con modify Hotspot connection.autoconnect yes<br></code></pre></td></tr></table></figure>
+<p>参考文件：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014695839/article/details/84554606">NetworkManager——nmcli命令连接WIFI、以太网和创建热点_armbian networkmanager 热点-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://docs.rockylinux.org/zh/gemstones/network/nmcli/">nmcli - 设置自动连接 - Documentation (rockylinux.org)</a></p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/04/28/SKRpico/">← 下一篇 SKRpico下位机固件刷写</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/04/27/respberryPi2W-power/">记一次树莓派乌龙 上一篇 →</a></div></div></div><div id="comments"><div id="gitalk"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/SAO.png" alt="Logo"></a><h1 id="Dr"><a href="/">LFSW元立</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/LongFengShuanWu"><i class="fab fa-github" alt="Github"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/200274416"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/lfswyuan-li"><i class="fab fa-zhihu" alt="Zhihu"></i></a><a class="social" href="jun@yuanli-lfsw.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">测试环境：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8D%A2%E6%BA%90"><span class="toc-number">2.</span> <span class="toc-text">换源</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E6%BA%90%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90"><span class="toc-number">2.1.</span> <span class="toc-text">软件源换清华源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Raspberrypi-%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93%E6%8D%A2%E6%BA%90"><span class="toc-number">2.2.</span> <span class="toc-text">Raspberrypi 软件仓库换源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E4%BB%93%E5%BA%93"><span class="toc-number">2.3.</span> <span class="toc-text">更新仓库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#python%E6%8D%A2%E6%BA%90"><span class="toc-number">3.</span> <span class="toc-text">python换源</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pip%E4%B8%8B%E8%BD%BD"><span class="toc-number">3.1.</span> <span class="toc-text">pip下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pip%E6%B0%B8%E4%B9%85%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90"><span class="toc-number">3.2.</span> <span class="toc-text">pip永久换清华源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#piwheels%E6%8D%A2%E9%98%BF%E9%87%8C%E6%BA%90"><span class="toc-number">3.3.</span> <span class="toc-text">piwheels换阿里源</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9UART"><span class="toc-number">4.</span> <span class="toc-text">修改UART</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8raspi-config%E5%90%AF%E7%94%A8UART"><span class="toc-number">4.1.</span> <span class="toc-text">使用raspi-config启用UART</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E9%85%8DUART0%E5%88%B0GPIO"><span class="toc-number">4.2.</span> <span class="toc-text">分配UART0到GPIO</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93"><span class="toc-number">5.</span> <span class="toc-text">克隆仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E4%B8%8B%E8%BD%BD"><span class="toc-number">5.1.</span> <span class="toc-text">git下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%8B%E9%9A%86gitee%E7%9A%84-Kiauh%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93"><span class="toc-number">5.2.</span> <span class="toc-text">克隆gitee的 Kiauh镜像仓库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC"><span class="toc-number">6.</span> <span class="toc-text">运行脚本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%83%AD%E7%82%B9%E8%AE%BE%E7%BD%AE%EF%BC%9A"><span class="toc-number">7.</span> <span class="toc-text">热点设置：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E7%94%A8%EF%BC%9A"><span class="toc-number">7.1.</span> <span class="toc-text">设置自动启用：</span></a></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">ICP</span><a class="icp-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">用github托管不就图个不用icp备案</a></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>

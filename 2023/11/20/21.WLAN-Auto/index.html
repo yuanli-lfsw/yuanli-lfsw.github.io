@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="[&quot;zh-cn&quot;,&quot;en-us&quot;,&quot;default&quot;]" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>20.网络自动化编程 | 元立'Blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="/js/gitalk.js"></script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/edge_background.jpg');
+ --light-background: url('/img/edge_background.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script async src="/js/gitalk.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@9.2.2/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/Link-Portals/"><span class="navItemTitle">Link-Portals</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>20.网络自动化编程</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-11-20T07:00:10.000Z" id="date"> 2023-11-20</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2023-11-24T07:18:24.000Z" id="updated"> 2023-11-24</time></div></span><br><span id="busuanzi_container_page_pv">页面浏览: <span class="control" id="busuanzi_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h2 id="Python代码"><a href="#Python代码" class="headerlink" title="Python代码"></a>Python代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs python">telnetlib 登录方式<br><br><span class="hljs-keyword">import</span> telnetlib					<span class="hljs-comment"># 调用模块（telnetlib）</span><br><span class="hljs-keyword">import</span> time<br>		<br>password = <span class="hljs-string">&#x27;Huawei@123&#x27;</span>					<br>username = <span class="hljs-string">&#x27;huawei&#x27;</span><br><br>tn = telnetlib.Telnet(<span class="hljs-string">&#x27;192.168.56.100&#x27;</span>,<span class="hljs-number">3000</span>)		<span class="hljs-comment"># 输入登录的设备 IP 和端口号（如果是默认端口，则无添加 3000）		</span><br><br><br><br>tn.read_until(<span class="hljs-string">b&#x27;Username:&#x27;</span>)				<span class="hljs-comment"># 登录设备，读取到 Username 时</span><br>tn.write(username.encode(<span class="hljs-string">&#x27;ascii&#x27;</span>) + <span class="hljs-string">b&#x27;\n&#x27;</span>)			<span class="hljs-comment"># 执行写操作，写入 huawei</span><br><br>tn.read_until(<span class="hljs-string">b&#x27;Password:&#x27;</span>)				<span class="hljs-comment"># 读取到 Password 时</span><br>tn.write(password.encode(<span class="hljs-string">&#x27;ascii&#x27;</span>) + <span class="hljs-string">b&#x27;\n&#x27;</span>)			<span class="hljs-comment"># 写入密码 Huawei@123</span><br><br>tn.read_until(<span class="hljs-string">b&#x27;&lt;LSW1&gt;&#x27;</span>)<br>tn.write(<span class="hljs-string">&#x27;sys&#x27;</span>.encode(<span class="hljs-string">&#x27;ascii&#x27;</span>) + <span class="hljs-string">b&#x27;\n&#x27;</span>)<br><br>tn.read_until(<span class="hljs-string">b&#x27;[LSW1]&#x27;</span>)<br>tn.write(<span class="hljs-string">&#x27;vlan 10&#x27;</span>.encode(<span class="hljs-string">&#x27;ascii&#x27;</span>) + <span class="hljs-string">b&#x27;\n&#x27;</span>)			<span class="hljs-comment"># 进入设备系统配置视图，并且创建 VLAN 10</span><br><br>tn.read_until(<span class="hljs-string">b&#x27;[LSW1-vlan10]&#x27;</span>)<br>tn.write(<span class="hljs-string">&#x27;display vlan&#x27;</span>.encode(<span class="hljs-string">&#x27;ascii&#x27;</span>) + <span class="hljs-string">b&#x27;\n&#x27;</span>)		<br><br>conf = tn.read_until(<span class="hljs-string">b&#x27;[LSW1-vlan10]&#x27;</span>).decode(<span class="hljs-string">&quot;ascii&quot;</span>)	<span class="hljs-comment"># 打印 vlan 信息</span><br><span class="hljs-built_in">print</span>(conf)<br><br>time.sleep(<span class="hljs-number">1</span>)<br>tn.close()						<span class="hljs-comment"># 关闭  telnetlib</span><br></code></pre></td></tr></table></figure>
+<hr>
+<h1 id="交换设备配置"><a href="#交换设备配置" class="headerlink" title="交换设备配置"></a>交换设备配置</h1><h3 id="1-创建用户"><a href="#1-创建用户" class="headerlink" title="1. 创建用户"></a>1. 创建用户</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">aaa<br>local-user huawei password cipher Huawei<br>local-user huawei privilege level 15<br>local-user huawei service-type telnet				// 指定服务类型，以及修改用户等级（3 及以上的等级）<br></code></pre></td></tr></table></figure>
+<h3 id="2-指定用户的接入方式和认证模式"><a href="#2-指定用户的接入方式和认证模式" class="headerlink" title="2. 指定用户的接入方式和认证模式"></a>2. 指定用户的接入方式和认证模式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">user-interface vty 0 4<br>authentication-mode aaa<br>protocol inbound all					// 进入 VTY 接口，修改认证模式，和接入协议<br></code></pre></td></tr></table></figure>
+<h3 id="3-（可选）"><a href="#3-（可选）" class="headerlink" title="3. （可选）"></a>3. （可选）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">telnet server port   3000					// 修改设备端口号<br></code></pre></td></tr></table></figure>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/11/24/hexo/">← 下一篇 hexo导航页配置</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/11/19/20.PPPoE/">19.PPPoE笔记 上一篇 →</a></div></div></div><div id="comments"><div id="gitalk"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/SAO.png" alt="Logo"></a><h1 id="Dr"><a href="/">LFSW元立</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/LongFengShuanWu"><i class="fab fa-github" alt="Github"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/200274416"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/lfswyuan-li"><i class="fab fa-zhihu" alt="Zhihu"></i></a><a class="social" href="jun@yuanli-lfsw.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python%E4%BB%A3%E7%A0%81"><span class="toc-number">1.</span> <span class="toc-text">Python代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E8%AE%BE%E5%A4%87%E9%85%8D%E7%BD%AE"><span class="toc-number"></span> <span class="toc-text">交换设备配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="toc-number">0.1.</span> <span class="toc-text">1. 创建用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%8C%87%E5%AE%9A%E7%94%A8%E6%88%B7%E7%9A%84%E6%8E%A5%E5%85%A5%E6%96%B9%E5%BC%8F%E5%92%8C%E8%AE%A4%E8%AF%81%E6%A8%A1%E5%BC%8F"><span class="toc-number">0.2.</span> <span class="toc-text">2. 指定用户的接入方式和认证模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">0.3.</span> <span class="toc-text">3. （可选）</span></a></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">ICP</span><a class="icp-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">用github托管不就图个不用icp备案</a></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>

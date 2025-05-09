@@ -1,0 +1,193 @@
+<!DOCTYPE html><html lang="[&quot;zh-cn&quot;,&quot;en-us&quot;,&quot;default&quot;]" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>09.以太网交换基础 | 元立'Blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="/js/gitalk.js"></script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/edge_background.jpg');
+ --light-background: url('/img/edge_background.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script async src="/js/gitalk.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@9.2.2/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/Link-Portals/"><span class="navItemTitle">Link-Portals</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>09.以太网交换基础</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-11-09T07:00:10.000Z" id="date"> 2023-11-09</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2023-11-24T07:20:58.000Z" id="updated"> 2023-11-24</time></div></span><br><span id="busuanzi_container_page_pv">页面浏览: <span class="control" id="busuanzi_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h1 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h1><p>早期的以太网使用共享线缆（HUB）接入的设备会共享带宽，泛洪处理数据<br>会导致数据帧的冲突问题（冲突域） CSMA&#x2F;CD 可以缓解冲突的问题</p>
+<ol>
+<li>先听后发：先侦听链路是否空闲，空闲时发送数据（非冲突时发送）</li>
+<li>边听边发：在发送的过程中也会持续监听链路，如果发现冲突则停止发送（冲突停发）</li>
+<li>随机延迟后重发：监听链路冲突缓解或解决后重新再发送数据</li>
+</ol>
+<h1 id="以太网的数据帧类型"><a href="#以太网的数据帧类型" class="headerlink" title="以太网的数据帧类型"></a>以太网的数据帧类型</h1><ul>
+<li><p>Ethernet II：<br>  主要用于承载用户数据，或者普通二层流量<br>  使用 Type 来标识上层协议（如：0x0800 &#x3D; IP、0x86DD &#x3D; IPv6 等）</p>
+</li>
+<li><p>802.3：<br>  主要用于承载控制协议流量（BPDU、IS-IS 格式帧等）<br>  使用 Length、LLC、SNAP 用于标识上层协议（一般使用 length 来标识）</p>
+</li>
+<li><p>MAC 地址（48 bit）<br>  是网卡的出厂地址，默认由厂商分配<br>  前 24 bit（OUI 指定，用于标识厂商）后 24 bit 由厂商分配，用于唯一标识一台设备</p>
+</li>
+</ul>
+<h2 id="MAC-地址（帧类型）"><a href="#MAC-地址（帧类型）" class="headerlink" title="MAC 地址（帧类型）"></a>MAC 地址（帧类型）</h2><ol>
+<li><p>单播：第 8 bit，固定为 0，偶数帧为单播数据帧<br>   例如：02-00-00-00-00-01 （02 代表是单播帧，也就是 XX-00-00-00-00-01，如果 XX 是偶数就是单播帧）</p>
+</li>
+<li><p>组播：第 8 bit，固定为 1，奇数帧为组播数据帧<br>   例如：01-00-5E-00-00-0A （01 代表是组播帧，也就是 XX-00-5E-00-00-0A，如果 XX 是奇数就是组播帧）</p>
+</li>
+<li><p>广播：所有 bit 位都等于 1，FF-FF-FF-FF-FF-FF 为广播帧</p>
+</li>
+</ol>
+<h1 id="交换机对于不同的数据帧，处理方式"><a href="#交换机对于不同的数据帧，处理方式" class="headerlink" title="交换机对于不同的数据帧，处理方式"></a>交换机对于不同的数据帧，处理方式</h1><ul>
+<li><p>学习功能：<br>  交换设备收到数据帧后，会根据数据帧的源 MAC 地址来进行记录<br>  记录 MAC 地址和接口的绑定关系（有相关记录的单播帧，称为已知单播，没有记录的称为，未知单播）</p>
+</li>
+<li><p>已知单播：<br>  从一个接口收到单播数据帧，会查看目的 MAC 地址表是否有对应关系，如果有，则从记录的接口发出<br>  （交换设备的转发行为）</p>
+</li>
+<li><p>未知单播：<br>  从一个接口收到单播数据帧，会查看目的 MAC 地址表是否有对应关系，如果没有，则从所有的其他接口发出<br>  （交换设备的泛洪处理）</p>
+</li>
+<li><p>组播：<br>  收到一个组播数据帧，会先上送 CPU 处理，查看本设备是否监听<br>  如果有监听，则从对应的接口转发<br>  如果没有监听，则直接泛洪处理</p>
+</li>
+<li><p>广播：<br>  收到一个广播数据帧，除了接收数据的接口，其余接口都做转发（泛洪）</p>
+</li>
+</ul>
+<h1 id="冗余链路"><a href="#冗余链路" class="headerlink" title="冗余链路"></a>冗余链路</h1><p>冗余的交换链路会带来环路和广播风暴等问题，通过生成树解决</p>
+<h2 id="端口角色"><a href="#端口角色" class="headerlink" title="端口角色"></a>端口角色</h2><p>RP：根端口，是非根交换机到达根桥最近的一个接口（一台非根交换机，有且只有 1 个）<br>DP：指定端口，每条链路都需要选举，最优的为指定端口（用于转发 BPDU 和用户数据）</p>
+<h2 id="选举参数"><a href="#选举参数" class="headerlink" title="选举参数"></a>选举参数</h2><ol>
+<li><p>Root ID：<br>优先级 + MAC 地址<br>优先级：16 bit &#x3D; 0 —— 65535，但是后 12 bit 固定为 0（4096）<br>优先级只能是 4096 的倍数，如：32768、0、4096、8192 等<br>（优先级默认：32768 越小越优）</p>
+<p>如果优先级一致，则比较 MAC 地址（越小越优）</p>
+</li>
+<li><p>RPC：<br> 根路径开销，非根设备到达根桥的总开销，最小的会成为 RP 端口</p>
+</li>
+<li><p>BID：<br>发送者的桥 ID，哪一台设备发送，就会填充该设备的桥 ID 信息<br>优先级 + MAC 地址<br>优先级：16 bit &#x3D; 0 —— 65535，但是后 12 bit 固定为 0（4096）<br>优先级只能是 4096 的倍数，如：32768、0、4096、8192 等<br>（优先级默认：32768 越小越优）</p>
+</li>
+<li><p>PID：<br>优先级 + 端口 ID 组成<br>优先级默认：128 越小越好，一致则比较端口 ID，越小越好<br>例如：G0&#x2F;0&#x2F;1 接口， PID &#x3D; 128.1</p>
+<ol>
+<li><p>选举根桥：<br> 所有的交换设备都会认为自己是根桥，通过发送 BPDU 的报文进行选举<br> 比较参数 1 选举最优的设备成为根桥（有且只有一个）<br> 其余设备为非根交换机</p>
+</li>
+<li><p>非根交换机选举根端口：<br> 非根设备会比较本设备所有接口，哪一个到达根桥最近就会成为根端口<br> 比较参数 2 （数值最小的）</p>
+</li>
+<li><p>每段链路都需要选举 DP 端口<br> 先比较参数 1 和 2 如果无法选举，则比较3<br> 补充：双交换设备双链路相连，前 3 个选举参数一致，则会比较第 4 个参数 PID</p>
+</li>
+<li><p>阻塞端口：<br> 阻塞非 DP 和 RP 的端口，选出 AP 端口</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="配置命令："><a href="#配置命令：" class="headerlink" title="配置命令："></a>配置命令：</h2><ol>
+<li>修改设备的优先级<br>方法一</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">stp   priority  0					// 把设备的优先级修改为 0<br></code></pre></td></tr></table></figure>
+<p>方法二</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">stp   root   primary					// 指定设备为根桥，相当于把优先级改为 0<br><br>stp  root   secondary 				// 指定设备为备份根桥，相当于把优先级改为 4096	<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>修改接口开销</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">interface  G0/0/X<br>stp  cost   100					// G0/0/X 接口默认开销为 20000，修改为 100<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>修改生成树类型</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">stp  mode  （stp、rstp、mstp）			// 默认为：MSTP  可以修改为其他类型<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>查看方式</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">display  stp  					// 查看详细信息<br>display  stp  brief					// 查看摘要信息<br></code></pre></td></tr></table></figure>
+
+<h1 id="STP-状态机"><a href="#STP-状态机" class="headerlink" title="STP 状态机"></a>STP 状态机</h1><ol>
+<li><p>discarding：不转发用户数据，不学习 MAC 地址（可以转发 BPDU） 是 AP 端口的最终状态</p>
+</li>
+<li><p>learning：不转发用户数据，但是可以学习 MAC 地址，也可以转发 BPDU，是 DP 和 RP 的过渡状态</p>
+</li>
+<li><p>forwarding：既可以转发用户数据，又可以学习 MAC 地址和转发 BPDU，是 DP 和 RP 的最终状态</p>
+<p> 每个状态切换都需要等待一个 forward delay（15s）<br> 从 discarding 到 forwarding 需要 2 个 forward delay（30s）</p>
+<p> STP 的收敛速度非常慢，每次接口从 Down 到 Up 还需要等 30s 才能转发<br> 问题一：PC 设备接入后，DP 端口需要 30s 才能转发 PC 设备的流量</p>
+<p> 问题二：当 RP 端口故障后，最优的 AP 会成为新的 RP 端口，但新 RP 端口到达转发状态需要 30s</p>
+<p> 即：网络的变化或者端口抖动（频繁 up&#x2F;down）都会使得交换网络等待 30s 才能恢复。这是用户无法接受的</p>
+<p> <strong>使用 RSTP 可以解决以上的问题</strong></p>
+<ol>
+<li><p>EP 端口（边缘端口）：<br> 用于连接终端设备（如：PC、服务器、IP 电话、打印机等）接口一旦 up 立刻进入 forwarding 状态<br> 无需等待 30s 的延迟</p>
+</li>
+<li><p>AP 端口是 RP 的备份，AP 在 RSTP 中为预备端口，一旦 RP 故障。最优的 AP 会立刻切换至 RP 并且进入 forwarding 状态<br> 无需等待 30s 的延迟        （AP 在 RSTP 和 MSTP 中是 RP 的预备端口）</p>
+</li>
+</ol>
+<ul>
+<li><em>端口快速切换到 forwarding 会产生哪些问题？</em><br>  如果端口接入就能转发有可能会产生环路问题，所以设置边缘端口时，为了保护交换设备，需要设置 BPDU 保护功能</li>
+</ul>
+</li>
+</ol>
+<h2 id="配置命令：-1"><a href="#配置命令：-1" class="headerlink" title="配置命令："></a>配置命令：</h2><ol>
+<li>配置端口为边缘端口</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">interface G0/0/X<br>stp edged-port enable					// 用于用户终端，接入就能访问网络，避免 30s 的等待延迟<br>（如果边缘端口接入的是交换机，就会有环路的风险）<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>配置边缘端口保护</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">stp bpdu-protection					// 开启后，只对边缘端口生效<br>交换设备会发送 BPDU，一旦边缘端口收到 BPDU 就会主动关闭该接口（终端不会关闭）<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>设置自动恢复</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">error-down  auto-recovery  cause  bpdu-protection  interval  30		// 因为收到 BPDU 导致的端口 shutdown 可以在 30s 后自动恢复<br></code></pre></td></tr></table></figure><div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/11/10/11.Datacom/">← 下一篇 10.MSTP+VRRP配置命令参考</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/11/08/9.Datacom/">08.VLAN基础 上一篇 →</a></div></div></div><div id="comments"><div id="gitalk"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/SAO.png" alt="Logo"></a><h1 id="Dr"><a href="/">LFSW元立</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/LongFengShuanWu"><i class="fab fa-github" alt="Github"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/200274416"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/lfswyuan-li"><i class="fab fa-zhihu" alt="Zhihu"></i></a><a class="social" href="jun@yuanli-lfsw.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91"><span class="toc-number">1.</span> <span class="toc-text">以太网</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E7%9A%84%E6%95%B0%E6%8D%AE%E5%B8%A7%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">以太网的数据帧类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MAC-%E5%9C%B0%E5%9D%80%EF%BC%88%E5%B8%A7%E7%B1%BB%E5%9E%8B%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">MAC 地址（帧类型）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AF%B9%E4%BA%8E%E4%B8%8D%E5%90%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E5%B8%A7%EF%BC%8C%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">交换机对于不同的数据帧，处理方式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%97%E4%BD%99%E9%93%BE%E8%B7%AF"><span class="toc-number">4.</span> <span class="toc-text">冗余链路</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E8%A7%92%E8%89%B2"><span class="toc-number">4.1.</span> <span class="toc-text">端口角色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E4%B8%BE%E5%8F%82%E6%95%B0"><span class="toc-number">4.2.</span> <span class="toc-text">选举参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">4.3.</span> <span class="toc-text">配置命令：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#STP-%E7%8A%B6%E6%80%81%E6%9C%BA"><span class="toc-number">5.</span> <span class="toc-text">STP 状态机</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4%EF%BC%9A-1"><span class="toc-number">5.1.</span> <span class="toc-text">配置命令：</span></a></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">ICP</span><a class="icp-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">用github托管不就图个不用icp备案</a></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>

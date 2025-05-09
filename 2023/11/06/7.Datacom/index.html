@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="[&quot;zh-cn&quot;,&quot;en-us&quot;,&quot;default&quot;]" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>06.OSPF基础 | 元立'Blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="/js/gitalk.js"></script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/edge_background.jpg');
+ --light-background: url('/img/edge_background.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script async src="/js/gitalk.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@9.2.2/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/Link-Portals/"><span class="navItemTitle">Link-Portals</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>06.OSPF基础</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-11-06T07:00:10.000Z" id="date"> 2023-11-06</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2023-11-24T08:25:34.000Z" id="updated"> 2023-11-24</time></div></span><br><span id="busuanzi_container_page_pv">页面浏览: <span class="control" id="busuanzi_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h3 id="IGP：内部网关协议，用于发现路由和计算路由"><a href="#IGP：内部网关协议，用于发现路由和计算路由" class="headerlink" title="IGP：内部网关协议，用于发现路由和计算路由"></a>IGP：内部网关协议，用于发现路由和计算路由</h3><ol>
+<li>OSPF</li>
+<li>IS-IS<br>3 RIP</li>
+</ol>
+<h3 id="EGP：外部网关协议，用于传递路由和控制路由优选"><a href="#EGP：外部网关协议，用于传递路由和控制路由优选" class="headerlink" title="EGP：外部网关协议，用于传递路由和控制路由优选"></a>EGP：外部网关协议，用于传递路由和控制路由优选</h3><ol>
+<li>BGP</li>
+</ol>
+<hr>
+<h1 id="OSPF（开放式的最短路径优先）"><a href="#OSPF（开放式的最短路径优先）" class="headerlink" title="OSPF（开放式的最短路径优先）"></a>OSPF（开放式的最短路径优先）</h1><p><strong>概念：Router ID（用于唯一标识一台 OSPF 路由器）</strong></p>
+<h2 id="工作过程："><a href="#工作过程：" class="headerlink" title="工作过程："></a>工作过程：</h2><ol>
+<li>邻居发现</li>
+<li>同步链路状态数据库（LSDB）</li>
+<li>SPF 计算（路径计算）</li>
+<li>路由计算</li>
+</ol>
+<h2 id="报文类型："><a href="#报文类型：" class="headerlink" title="报文类型："></a>报文类型：</h2><ol>
+<li><p>Hello 报文：用于发现邻居和建立邻居关系，也可以维护邻居关系<br> 周期性发送（10s）邻居保持时间（4 倍 &#x3D; 40s）</p>
+</li>
+<li><p>DD 报文：（1）用于邻居之间选举主从关系  （2）用于描述 LSA 的摘要信息</p>
+</li>
+<li><p>LSR 报文：请求本端缺少的 LSA 信息（摘要）</p>
+</li>
+<li><p>LSU 报文：响应对方的请求，并回复明细的 LSA 信息</p>
+</li>
+<li><p>LSAck 报文：确认收到的 LSA 信息（摘要）</p>
+</li>
+</ol>
+<h2 id="状态机："><a href="#状态机：" class="headerlink" title="状态机："></a>状态机：</h2><ol>
+<li><p>Down：代表 OSPF 协议刚使能（未建立邻居关系）</p>
+</li>
+<li><p>Attempt：只出现在 NBMA 网络中（在 NBMA 中需要手工指定邻居的 IP 地址才能发起建立）<br> 当本端指定了邻居地址后，会立刻发送 Hello 报文，如果在一段时间内都没有收到对方发送的 Hello 报文，则会从 Down 切换为 Attempt 状态</p>
+</li>
+<li><p>Init：代表收到了对方的 Hello 报文，但对方的 Hello 报文中没有携带本端设备的 Router id<br> 代表双方还需要进行协商</p>
+</li>
+<li><p>2-Way：代表收到了对方的 Hello 报文，并且对方的 Hello 报文携带本端的 Router id<br> 代表邻居关系已经建立</p>
+</li>
+<li><p>Exstart：代表开始同步链路状态数据库，选举主从关系（设备之间建立邻接关系）<br> Router ID 大的设备会成为主路由器（MS&#x3D;1） Router id 小的为从路由器（MS&#x3D;0）<br> 补充：主从路由器通过序列号确保传输可靠性，从路由器必须向主路由器进行回复（没有回复则 5s 重传一次）</p>
+</li>
+<li><p>Exchange：主从选举完成后，从设备会先进入到 Exchange 给主设备进行确认回复，并携带 LSA 的摘要信息（列表）<br> 主设备收到后也会进入到 Exchange，并且给从设备发送 LSA 的摘要信息</p>
+</li>
+<li><p>Loading：如果双方的 LSDB 没有同步，则进入 Loading 发起 LSA 的请求</p>
+</li>
+<li><p>Full：双方通过 Loading 状态完全同步了 LSDB，最终进入 Full 状态（代表 LSDB 完全同步，邻接状态建立完成）<br> （补充：如果在 Exchange 中发现 LSDB 已经完成同步，也可以直接到达 Full 状态）</p>
+</li>
+</ol>
+<h2 id="网络类型"><a href="#网络类型" class="headerlink" title="网络类型"></a>网络类型</h2><ol>
+<li><p>P2P（点到点）：当 OSPF 协议发现接口类型为（光口或者串口等）链路层协议为 PPP 或 HDLC 则网络类型为 P2P</p>
+</li>
+<li><p>BMA（广播多路访问）：当网络类型为以太网，则默认的网络类型为 BMA</p>
+</li>
+<li><p>NBMA（非广播多路访问）在帧中继（FR）网络中，默认的网络类型 NBMA</p>
+</li>
+<li><p>P2MP（点到多点）：需要手工修改</p>
+</li>
+</ol>
+<p>在 MA 的网络中（BMA、NBMA）会选举 DR 和 BDR 来减少邻接关系<br>选举 DR 会根据优先级来选择（默认：1）可选范围 0—255，但是 0 不参与 DR 选举（大）<br>如果优先级一致，则比较 Router id（大）</p>
+<h2 id="区域分类"><a href="#区域分类" class="headerlink" title="区域分类"></a>区域分类</h2><ol>
+<li>骨干区域：是 OSPF 网络的交通枢纽，所有的非骨干区域（普通区域）都需要与之相连</li>
+<li>普通区域：除 area 0 以外的（除骨干以外的都为普通区域）</li>
+</ol>
+<p>补充：OSPF 是以接口来划分区域的，两个设备的接口如果处于不同区域，则无法建立邻居</p>
+<h2 id="配置命令："><a href="#配置命令：" class="headerlink" title="配置命令："></a>配置命令：</h2><ol>
+<li>接口配置 IP 地址</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">interface  G0/0/X	<br>ip address  10.1.1.1   24		// 进入 G0/0/X 接口，配置接口地址为：10.1.1.1/24<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>创建 OSPF 进程，并且手工指定 router id</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ospf  1   router-id  1.1.1.1		// 创建 OSPF 进程，ID=1 ，router id 为：1.1.1.1（每台设备都需要配置独立的 Router id，不能冲突）<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>进入进程后，把设备自身的接口通告给邻居</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">area    0<br>network   10.1.1.1  0.0.0.255			// 进入到骨干区域 0 中，把自己的接口 10.1.1.1/24 通告给邻居（掩码 24 = 255.255.255.0  |  通配符 = 0.0.0.255）<br></code></pre></td></tr></table></figure>
+
+<p>（配置方式 2）取代步骤 2 和 3</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ospf  1   router-id  1.1.1.1			// 创建 OSPF 进程，配置 Router id<br>area  0					// 创建骨干区域 0<br>quit					// 退出<br><br>interface  G0/0/X				// 进入 G0/0/X 接口<br>ospf  enable  1   area 0			// 把该接口发布到 OSPF 进程 1 区域 0 中<br></code></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>查看 OSPF 邻居关系</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">display   ospf   peer   brief			// 查看邻居建立的摘要信息<br></code></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>查看路由表</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">display  ip  routing-table			// 有对端设备的接口路由才能访问（测试 ping -a 1.1.1.1  4.4.4.4  使用 1.1.1.1 接口访问 4.4.4.4 目的地址）<br></code></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>修改接口优先级</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">interface G0/0/X				DR 是以物理接口的优先级来进行比较的，默认为：1  越大越好（0—255）   0 不参与 DR 选举<br> ospf dr-priority 100			// 例如：把 AR1 的 G0/0/X 接口优先级修改为 100<br></code></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>查看是否 DR 设备</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">display  ospf  interface  G0/0/X		// 查看 OSPF 接口信息即可<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/11/07/Ubuntu22-04-fusuma/">← 下一篇 Ubuntu22.04下安装fusuma</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/11/05/5.IProuer/">05.IP路由交换基础--静态路由 上一篇 →</a></div></div></div><div id="comments"><div id="gitalk"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/SAO.png" alt="Logo"></a><h1 id="Dr"><a href="/">LFSW元立</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/LongFengShuanWu"><i class="fab fa-github" alt="Github"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/200274416"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/lfswyuan-li"><i class="fab fa-zhihu" alt="Zhihu"></i></a><a class="social" href="jun@yuanli-lfsw.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#IGP%EF%BC%9A%E5%86%85%E9%83%A8%E7%BD%91%E5%85%B3%E5%8D%8F%E8%AE%AE%EF%BC%8C%E7%94%A8%E4%BA%8E%E5%8F%91%E7%8E%B0%E8%B7%AF%E7%94%B1%E5%92%8C%E8%AE%A1%E7%AE%97%E8%B7%AF%E7%94%B1"><span class="toc-number">1.</span> <span class="toc-text">IGP：内部网关协议，用于发现路由和计算路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EGP%EF%BC%9A%E5%A4%96%E9%83%A8%E7%BD%91%E5%85%B3%E5%8D%8F%E8%AE%AE%EF%BC%8C%E7%94%A8%E4%BA%8E%E4%BC%A0%E9%80%92%E8%B7%AF%E7%94%B1%E5%92%8C%E6%8E%A7%E5%88%B6%E8%B7%AF%E7%94%B1%E4%BC%98%E9%80%89"><span class="toc-number">2.</span> <span class="toc-text">EGP：外部网关协议，用于传递路由和控制路由优选</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#OSPF%EF%BC%88%E5%BC%80%E6%94%BE%E5%BC%8F%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E4%BC%98%E5%85%88%EF%BC%89"><span class="toc-number"></span> <span class="toc-text">OSPF（开放式的最短路径优先）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">工作过程：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%A5%E6%96%87%E7%B1%BB%E5%9E%8B%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">报文类型：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E6%9C%BA%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">状态机：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%B1%BB%E5%9E%8B"><span class="toc-number"></span> <span class="toc-text">网络类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BA%E5%9F%9F%E5%88%86%E7%B1%BB"><span class="toc-number"></span> <span class="toc-text">区域分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">配置命令：</span></a></div></div><footer><nobr><span class="icp-title">ICP</span><a class="icp-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">用github托管不就图个不用icp备案</a></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>

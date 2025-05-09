@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="[&quot;zh-cn&quot;,&quot;en-us&quot;,&quot;default&quot;]" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>voron0.2r1配置踩坑 | 元立'Blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="/js/gitalk.js"></script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/edge_background.jpg');
+ --light-background: url('/img/edge_background.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script async src="/js/gitalk.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@9.2.2/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/Link-Portals/"><span class="navItemTitle">Link-Portals</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>voron0.2r1配置踩坑</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-03-01T07:52:57.000Z" id="date"> 2024-03-01</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2024-03-01T07:54:38.000Z" id="updated"> 2024-03-01</time></div></span><br><span id="busuanzi_container_page_pv">页面浏览: <span class="control" id="busuanzi_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h1 id="物料购买篇"><a href="#物料购买篇" class="headerlink" title="物料购买篇"></a>物料购买篇</h1><p>中文参考这个：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1G14y1D7Ne/?spm_id_from=333.788.recommend_more_video.0&vd_source=5b8bf6305b0fd9908d0f4a435e1f0d74">Voron0.2r1 史上最低装机方案 百元级 高速3D打印机 采购指南 有手就能装好的_哔哩哔哩_bilibili</a><br>我用的其中标准版，基本上都齐全。基本照着买就行<br>几个建议：</p>
+<ul>
+<li>工具：拧螺丝需要1.3mm、1.5mm、2mm这几个口径的内六角扳手,**尤其时1.3mm的内六角扳手，大部分的内六角套装没有！！！</li>
+<li>可以把用来连接固定底座打印件的M3X40半圆头螺栓 （BHCS）换成M3X45以上的，连接时可能会出现滑丝问题，40的长度不太够，45的可以打深点</li>
+<li>都备点插簧插片（4.8mm的），X254的各种插头，插座，还有压线钳（压线钳别买错了，有很多型号不支持X254），用来制作延长线（对于不会焊接的很友好）压线教程如下：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Hf4y1b72P/?spm_id_from=333.337.search-card.all.click&vd_source=5b8bf6305b0fd9908d0f4a435e1f0d74">【soso工坊】JST XH X2.54端子制作教程_哔哩哔哩_bilibili</a></li>
+<li>消隙螺母：那份表上说不要议买双切边的，但实际组装中感觉需要（没双切边的需要削掉一边），建议两种都买，一个不行换另一个</li>
+<li>封箱板有一个是要两个的（左右版是一个文件，文件名没标注数量）</li>
+<li>断料检测：气动接头要拆开，嫌麻烦可以不装</li>
+<li>皮带有内芯是钢丝的聚酯皮带和内芯是玻璃纤维的橡胶皮带，买后者，怕买错就盖茨</li>
+<li>屏幕可以不要，真的没啥用，资料还不好找</li>
+<li>3X6和3X8的螺丝多买点，换成国标型材有些地方3X6的不够深需要换成3X8的</li>
+<li>虽说不需要焊接，但还是需要一根尖头电烙铁的（热熔螺母需要）</li>
+</ul>
+<h1 id="刷机篇"><a href="#刷机篇" class="headerlink" title="刷机篇"></a>刷机篇</h1><h2 id="kiauh网络问题"><a href="#kiauh网络问题" class="headerlink" title="kiauh网络问题"></a>kiauh网络问题</h2><p>搞了ssr的局域网共享，最后还是gitee(<a target="_blank" rel="noopener" href="https://gitee.com/miroky/kiauh">kiauh: kiauh 国内镜像 其中klipper和moonraker指向本账号的其他两个代码库。 V5.0.0同步更新。 V4.0.0的用户请在升级后运行path_patch_4to5.sh进行迁移。 迁移后请务必检查更新[virtual_sdcard]的路径到printer_data{_x}&#x2F;gcodes (gitee.com)</a> )</p>
+<p>SSH连接推荐：MobaXterm的汉化版(<a target="_blank" rel="noopener" href="https://github.com/RipplePiam/MobaXterm-Chinese-Simplified/releases/tag/v0.23.109">RipplePiam&#x2F;MobaXterm-Chinese-Simplified: MobaXterm 简体中文汉化版🌏🖥🖥🖥 【💌慢工精心制作，”提示”也汉化💻】 【😍控件布局精细调整】 (github.com)</a>)</p>
+<h1 id="可能会遇到的坑"><a href="#可能会遇到的坑" class="headerlink" title="可能会遇到的坑"></a>可能会遇到的坑</h1><ul>
+<li>铝型材切割不平（找个靠谱点的）</li>
+<li>热床保险丝会顶到调平螺母（这保险丝不要也罢）</li>
+<li>喷头漏塑料（拧紧点）</li>
+<li>电机接线（看好线序，不拍接反怕接错）</li>
+<li>胶带（胶带要遇热才能张牢）</li>
+<li>电机配置（配置文件有写咋改，看不懂扔翻译）</li>
+<li>拖链角度不够（拿刀自己修）</li>
+</ul>
+<h1 id="切片软件"><a href="#切片软件" class="headerlink" title="切片软件"></a>切片软件</h1><p>Cura5以上的都有V0的预设，<br>测试过4.8的，用V2.4的预设也可以（记得调尺寸）</p>
+<p>以上</p>
+<hr>
+<h1 id="附："><a href="#附：" class="headerlink" title="附："></a>附：</h1><h2 id="价格表："><a href="#价格表：" class="headerlink" title="价格表："></a>价格表：</h2><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>价格</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>打印套件</td>
+<td>159</td>
+<td>咸鱼</td>
+</tr>
+<tr>
+<td>BMG挤出机套件</td>
+<td>17</td>
+<td>淘宝</td>
+</tr>
+<tr>
+<td>主板</td>
+<td>208</td>
+<td>淘宝</td>
+</tr>
+<tr>
+<td>散热</td>
+<td>4.8</td>
+<td>淘宝</td>
+</tr>
+<tr>
+<td>闪迪64gTF卡</td>
+<td>37</td>
+<td>淘宝</td>
+</tr>
+<tr>
+<td>雷赛35CM04步进电机*&#x2F;2</td>
+<td>130</td>
+<td>淘宝</td>
+</tr>
+<tr>
+<td>42丝杆步进电机</td>
+<td>59</td>
+<td>淘宝</td>
+</tr>
+<tr>
+<td>3010涡轮*&#x2F;2</td>
+<td>18</td>
+<td>淘宝</td>
+</tr>
+<tr>
+<td>3010风扇*&#x2F;2</td>
+<td>20</td>
+<td>淘宝</td>
+</tr>
+<tr>
+<td>欧姆龙微动开关D2F-5</td>
+<td>3.48</td>
+<td>淘宝</td>
+</tr>
+<tr>
+<td>电源线</td>
+<td>2.4</td>
+<td>淘宝</td>
+</tr>
+<tr>
+<td>AC-01插座</td>
+<td>2.87</td>
+<td>淘宝</td>
+</tr>
+<tr>
+<td>5*&#x2F;20保险丝</td>
+<td>1</td>
+<td>淘宝</td>
+</tr>
+<tr>
+<td>散热片</td>
+<td>1.28</td>
+<td>淘宝</td>
+</tr>
+<tr>
+<td>消隙螺母</td>
+<td>2.8</td>
+<td>淘宝</td>
+</tr>
+</tbody></table>
+<hr>
+<p>现就写到这，过几天看看要不要出个视频</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/03/30/Voron2.4build/">← 下一篇 Voron2.4构建心得</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/01/15/CloudeFlare301/">CloudeFlare修改301重定向心得 上一篇 →</a></div></div></div><div id="comments"><div id="gitalk"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/SAO.png" alt="Logo"></a><h1 id="Dr"><a href="/">LFSW元立</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/LongFengShuanWu"><i class="fab fa-github" alt="Github"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/200274416"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/lfswyuan-li"><i class="fab fa-zhihu" alt="Zhihu"></i></a><a class="social" href="jun@yuanli-lfsw.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%A9%E6%96%99%E8%B4%AD%E4%B9%B0%E7%AF%87"><span class="toc-number">1.</span> <span class="toc-text">物料购买篇</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%B7%E6%9C%BA%E7%AF%87"><span class="toc-number">2.</span> <span class="toc-text">刷机篇</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#kiauh%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98"><span class="toc-number">2.1.</span> <span class="toc-text">kiauh网络问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91"><span class="toc-number">3.</span> <span class="toc-text">可能会遇到的坑</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%87%E7%89%87%E8%BD%AF%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">切片软件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%99%84%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">附：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%B7%E6%A0%BC%E8%A1%A8%EF%BC%9A"><span class="toc-number">5.1.</span> <span class="toc-text">价格表：</span></a></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">ICP</span><a class="icp-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">用github托管不就图个不用icp备案</a></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="[&quot;zh-cn&quot;,&quot;en-us&quot;,&quot;default&quot;]" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>05.IP路由交换基础--静态路由 | 元立'Blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="/js/gitalk.js"></script><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/edge_background.jpg');
+ --light-background: url('/img/edge_background.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script async src="/js/gitalk.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@9.2.2/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23li6l7Vha6J97w6g2',
+ clientSecret: '44a954ab2d9b330a8dd107ffcdde96008b1b8599',
+ repo: 'Gittalk-blog',
+ owner: 'LongFengShuanWu',
+ admin: ['LongFengShuanWu'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/Link-Portals/"><span class="navItemTitle">Link-Portals</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>05.IP路由交换基础--静态路由</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-11-05T07:00:10.000Z" id="date"> 2023-11-05</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2023-11-24T07:16:38.000Z" id="updated"> 2023-11-24</time></div></span><br><span id="busuanzi_container_page_pv">页面浏览: <span class="control" id="busuanzi_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h1 id="ICMP-协议"><a href="#ICMP-协议" class="headerlink" title="ICMP 协议"></a>ICMP 协议</h1><p>作用：为网络层提供或传递差错检测和网络控制信息</p>
+<h2 id="1-连通性检测（差错检测）"><a href="#1-连通性检测（差错检测）" class="headerlink" title="1. 连通性检测（差错检测）"></a>1. 连通性检测（差错检测）</h2><p>当网络设备需要检测是否能到达目的设备时，可以发送一个 ICMP 的 Echo Request 报文到目的设备进行检测<br>目的设备回复后，则证明网络连通（并返回传输过程中的延迟、丢包率、网络抖动等信息）<br>目的设备无回复，则返回差错消息（如：目的地址不可达、主机不可达等）<br>作用：用于检测网络连通性，及网络品质</p>
+<h2 id="2-重定向（控制信息）"><a href="#2-重定向（控制信息）" class="headerlink" title="2. 重定向（控制信息）"></a>2. 重定向（控制信息）</h2><p>当设备访问不同网段的目的设备时，会寻找网关设备，网关设备会根据 IP 路由表转发数据包<br>当网关设备发现发起访问的设备有更优的路径，会通过重定向报文告知发起访问的设备<br>（如：访问服务器 Server 1 更好的下一跳是 R2）则会通过重定向报文告知发起访问的设备<br>下一次转发数据时，发起访问的设备会直接找到 R2 进行转发</p>
+<h2 id="3-TTL-超时（差错控制）"><a href="#3-TTL-超时（差错控制）" class="headerlink" title="3. TTL 超时（差错控制）"></a>3. TTL 超时（差错控制）</h2><p>当 TTL &#x3D; 0 时，设备会丢弃数据包，并且向源设备发起 ICMP（type&#x3D;11）的 TTL 超时通告<br>利用该特性，可以感知传输路径上，数据包所经过的设备有哪些</p>
+<p>例如：测试 R1-R2-R3-R4 的传输路径<br>tracert 工具，发起测试时</p>
+<ol>
+<li>默认会把 TTL 设置为 1，R1 把数据包发给 R4（TTL&#x3D;1）</li>
+<li>到达 R2 后，数据包被丢弃，R2 告知 R1 （TTL 超时）</li>
+<li>R1 再次把 TTL 修改为 2 发起测试（重复步骤 1 和 2）</li>
+<li>最终 R1 得知到达 R4 所经过的设备有（R2-R3-R4）</li>
+</ol>
+<h2 id="配置命令："><a href="#配置命令：" class="headerlink" title="配置命令："></a>配置命令：</h2><p><code>ping + 目的地址</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ping  10.1.1.1   可以测试本设备是否能够到达 10.1.1.1 设备，同时能够返回传输的延迟、丢包率、抖动情况等信息<br></code></pre></td></tr></table></figure>
+<p><code>ping -a  + 源 IP 地址 来发起访问</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ping -a  192.168.1.1   10.1.1.1				// 使用源地址：192.168.1.1 对 10.1.1.1 发起访问测试（指定源地址测试）<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ping -c  1000  10.1.1.1				// 测试 10.1.1.1 可达性的时候，发送 1000 个测试报文（默认 5 个）<br></code></pre></td></tr></table></figure>
+
+<h1 id="路由表"><a href="#路由表" class="headerlink" title="路由表"></a>路由表</h1><h2 id="1-目的地址-掩码"><a href="#1-目的地址-掩码" class="headerlink" title="1. 目的地址&#x2F;掩码"></a>1. 目的地址&#x2F;掩码</h2><p>用于告知管理员或者设备，本路由器能够到达的目的地址有哪些</p>
+<h2 id="2-协议类型"><a href="#2-协议类型" class="headerlink" title="2. 协议类型"></a>2. 协议类型</h2><p>告知管理员和设备，本条路由是通过哪一种协议学习到的</p>
+<h2 id="3-路由优先级（管理距离）"><a href="#3-路由优先级（管理距离）" class="headerlink" title="3. 路由优先级（管理距离）"></a>3. 路由优先级（管理距离）</h2><p>是用于衡量路由协议的优先程度的标准（0—255）越小越好</p>
+<ul>
+<li>Direct （直连路由是设备自身接口的 IP 地址）最优，优先级为：0<ul>
+<li>内部优先级（是设备定义的，无法修改的）</li>
+</ul>
+</li>
+<li>Static  （静态路由是由管理员手工指定）优先级：60<ul>
+<li>当不同的协议，优先级一致时，无法比较开销，设备会根据内部优先级比较</li>
+<li>direct    0</li>
+</ul>
+</li>
+</ul>
+<h3 id="动态路由协议"><a href="#动态路由协议" class="headerlink" title="动态路由协议"></a>动态路由协议</h3><p>OSPF  10</p>
+<h4 id="OSPF"><a href="#OSPF" class="headerlink" title="OSPF"></a>OSPF</h4><ol>
+<li>内部路由：优先级：10<br> IS-IS   level-1    15</li>
+<li>外部路由（O_ASE、NSSA）：优先级：150<br> IS-IS   level-2    18<br> Static     60</li>
+</ol>
+<ul>
+<li>RIP	优先级：100	<br>  RIP         100<br>  EBGP      20</li>
+</ul>
+<h4 id="IS-IS"><a href="#IS-IS" class="headerlink" title="IS-IS"></a>IS-IS</h4><ol>
+<li>level-1   优先级：15					IBGP       200</li>
+<li>level-2   优先级：15			（不同的路由协议，设备会默认先比较外部优先级，当外部优先级一致的时候才会比较内部优先级）</li>
+</ol>
+<h4 id="BGP"><a href="#BGP" class="headerlink" title="BGP"></a>BGP</h4><ol>
+<li>IBGP  优先级：255 </li>
+<li>EBGP  优先级：255</li>
+</ol>
+<p><strong>外部优先级是可以修改的</strong></p>
+<hr>
+<p><strong>补充：相同目的地址和掩码的路由，路由表只会保留最优的一条（除：负载均衡）</strong><br>例如：相同的路由（不同协议会比较优先级）</p>
+<ol>
+<li><p>1.1.1.1&#x2F;32    OSPF</p>
+</li>
+<li><p>1.1.1.1&#x2F;32    IS-IS		设备会优先级 1</p>
+<p> 补充：如果相同的路由，协议也一致，优先级也一样，则比较 4（开销值）</p>
+</li>
+</ol>
+<h2 id="4-开销值（距离）"><a href="#4-开销值（距离）" class="headerlink" title="4. 开销值（距离）"></a>4. 开销值（距离）</h2><p>开销值越小，代表设备到达目的地址越近（越小越好）<br>例如： </p>
+<ol>
+<li>1.1.1.1&#x2F;32   OSPF   cost&#x3D;10</li>
+<li>1.1.1.1&#x2F;32    OSPF  cost&#x3D;20   则优选 1</li>
+</ol>
+<h2 id="5-下一跳："><a href="#5-下一跳：" class="headerlink" title="5. 下一跳："></a>5. 下一跳：</h2><p>设备到达目的地址有可能不是直连的（并非直达）需要根据下一跳设备。进行逐跳转发</p>
+<h2 id="6-出接口："><a href="#6-出接口：" class="headerlink" title="6. 出接口："></a>6. 出接口：</h2><p>告知设备数据包应该从哪一个接口出去</p>
+<h1 id="静态路由："><a href="#静态路由：" class="headerlink" title="静态路由："></a>静态路由：</h1><p>以太网中必须指定下一跳（以太网为广播型多路访问网络类型，从一个接口出去后可能会到达多个其他设备，所以必须指定下一跳设备及接口地址）<br>	点对点网络可以指定下一跳或出接口（1:1 的链接，从一个接口出去一定能够到达对端设备）</p>
+<p>配置命令：（系统配置视图）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ip route-static   目的地址  +  掩码   +  下一跳 / 出接口<br>例： ip  route-static  1.1.1.1   32   10.1.12.2			// 配置到达目的地址为：1.1.1.1/32 的静态路由，下一跳地址为：10.1.12.2<br>ip  route-static  1.1.1.1   32    P2/0/0			// 配置到达目的地址为：1.1.1.1/32 的静态路由，指定出接口为：P2/0/0<br></code></pre></td></tr></table></figure>
+
+<h2 id="1-等价路由"><a href="#1-等价路由" class="headerlink" title="1. 等价路由"></a>1. 等价路由</h2><ul>
+<li>当访问目的设备时，有多个下一跳接口和链路，则可以配置多条静态路由</li>
+<li>这些静态路由的优先级和开销值都一致，可以成为负责均衡路由（等价路由），设备根据 5 元组（源、目 IP；协议号；源、目端口号）进行计算</li>
+<li>根据不同的计算结果选用任意的负载链路转发<br>（应用场景：一般在带宽或设备数量一致的场景下使用）</li>
+</ul>
+<h2 id="2-浮动路由"><a href="#2-浮动路由" class="headerlink" title="2. 浮动路由"></a>2. 浮动路由</h2><ul>
+<li>当访问目的设备时，有多个下一跳接口和链路，则可以配置多条静态路由</li>
+<li>这些静态路由的优先级不一致，可以设置高带宽的静态路由（优先级更优，数值更小）<br>  低带宽的静态路由可以设置为备份路由（优先级数值更大）<br>  （主备）正常情况下使用主路由（带宽高的）</li>
+<li>系统配置视图（display  this）可以查看静态路由配置</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ip route-static   目的地址  +  掩码   +  下一跳 / 出接口<br>ip route-static 1.1.1.1   32   10.1.23.3 preference 55			// 例如把静态路由的优先级改为 55（默认值为：60）1—255（越小越优）<br></code></pre></td></tr></table></figure>
+
+<h2 id="3-CIDR-与-VLSM"><a href="#3-CIDR-与-VLSM" class="headerlink" title="3. CIDR 与 VLSM"></a>3. CIDR 与 VLSM</h2><ul>
+<li>VLSM（可变长子网掩码）把一个子网变成多个子网的技术</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">192.168.1.0/24	向主机位借位，192.168.1.0/25 （0—127）    /    192.168.1.128/25（128—255）<br></code></pre></td></tr></table></figure>
+<ul>
+<li>CIDR（无类域间路由）可以把多个子网变成一个子网的技术</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">例如：把  192.168.1.0/25 和 192.168.1.128/25 合成  192.168.1.0/24 的技术，向主机位借位<br>172.16.16.0/24	把相同的地址保留（左往右）	172.16（保留） = 16 bit<br>172.16.17.0/24		不同的进行二进制换算	16、17、18<br>172.16.18.0/24		16= 0001  0000<br>					17= 0001  0001<br>					18= 0001  0010	把相同部分的保留下来 0001 00XX（相同的仅保留了 6 bit)<br>最终得出汇总后的地址为：  172.16.16.0/22<br>主机位向网络位借位（借了 2 位）<br></code></pre></td></tr></table></figure>
+
+<h2 id="4、为了避免环路的发生"><a href="#4、为了避免环路的发生" class="headerlink" title="4、为了避免环路的发生"></a>4、为了避免环路的发生</h2><ul>
+<li>内网互访可以使用 CIDR 汇总路由，减少路由条目的数量还能减少环路的产生</li>
+<li>如果是缺省路由，更容易产生环路，缺省路由一般用于出口路由器</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ip route-static  0.0.0.0   0   10.1.12.2		（缺省路由）<br></code></pre></td></tr></table></figure>
+
+
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2023/11/06/7.Datacom/">← 下一篇 06.OSPF基础</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/11/05/Linux-Power/">Linux延长续航设置 上一篇 →</a></div></div></div><div id="comments"><div id="gitalk"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/SAO.png" alt="Logo"></a><h1 id="Dr"><a href="/">LFSW元立</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/LongFengShuanWu"><i class="fab fa-github" alt="Github"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/200274416"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/lfswyuan-li"><i class="fab fa-zhihu" alt="Zhihu"></i></a><a class="social" href="jun@yuanli-lfsw.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ICMP-%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.</span> <span class="toc-text">ICMP 协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%BF%9E%E9%80%9A%E6%80%A7%E6%A3%80%E6%B5%8B%EF%BC%88%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">1. 连通性检测（差错检测）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%87%8D%E5%AE%9A%E5%90%91%EF%BC%88%E6%8E%A7%E5%88%B6%E4%BF%A1%E6%81%AF%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">2. 重定向（控制信息）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-TTL-%E8%B6%85%E6%97%B6%EF%BC%88%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">3. TTL 超时（差错控制）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">1.4.</span> <span class="toc-text">配置命令：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E8%A1%A8"><span class="toc-number">2.</span> <span class="toc-text">路由表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9B%AE%E7%9A%84%E5%9C%B0%E5%9D%80-%E6%8E%A9%E7%A0%81"><span class="toc-number">2.1.</span> <span class="toc-text">1. 目的地址&#x2F;掩码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%8D%8F%E8%AE%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">2. 协议类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%B7%AF%E7%94%B1%E4%BC%98%E5%85%88%E7%BA%A7%EF%BC%88%E7%AE%A1%E7%90%86%E8%B7%9D%E7%A6%BB%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">3. 路由优先级（管理距离）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.3.1.</span> <span class="toc-text">动态路由协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#OSPF"><span class="toc-number">2.3.1.1.</span> <span class="toc-text">OSPF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IS-IS"><span class="toc-number">2.3.1.2.</span> <span class="toc-text">IS-IS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BGP"><span class="toc-number">2.3.1.3.</span> <span class="toc-text">BGP</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%BC%80%E9%94%80%E5%80%BC%EF%BC%88%E8%B7%9D%E7%A6%BB%EF%BC%89"><span class="toc-number">2.4.</span> <span class="toc-text">4. 开销值（距离）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E4%B8%8B%E4%B8%80%E8%B7%B3%EF%BC%9A"><span class="toc-number">2.5.</span> <span class="toc-text">5. 下一跳：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%87%BA%E6%8E%A5%E5%8F%A3%EF%BC%9A"><span class="toc-number">2.6.</span> <span class="toc-text">6. 出接口：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">静态路由：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AD%89%E4%BB%B7%E8%B7%AF%E7%94%B1"><span class="toc-number">3.1.</span> <span class="toc-text">1. 等价路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%B5%AE%E5%8A%A8%E8%B7%AF%E7%94%B1"><span class="toc-number">3.2.</span> <span class="toc-text">2. 浮动路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-CIDR-%E4%B8%8E-VLSM"><span class="toc-number">3.3.</span> <span class="toc-text">3. CIDR 与 VLSM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E4%B8%BA%E4%BA%86%E9%81%BF%E5%85%8D%E7%8E%AF%E8%B7%AF%E7%9A%84%E5%8F%91%E7%94%9F"><span class="toc-number">3.4.</span> <span class="toc-text">4、为了避免环路的发生</span></a></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">ICP</span><a class="icp-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">用github托管不就图个不用icp备案</a></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
